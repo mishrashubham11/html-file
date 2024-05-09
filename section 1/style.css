@@ -1,0 +1,7 @@
+.BTN{
+    background-color: rgb(76, 7, 225);
+    color: rgb(222, 222, 233);
+    padding: 30px 20px;
+    border: none;
+    cursor: pointer;
+}
