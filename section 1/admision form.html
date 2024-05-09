@@ -4,30 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form{
+            font-size:larger;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(9, 8, 8);   
+        }
+        body{
+            background-color: rgb(43, 195, 226);
+            font: rgb(12, 12, 12);
+            font-size: larger;
+        }
+        button{
+            background-color: blue;
+            color:white;
+            cursor: pointer;
+            font-size: x-large;
+        }
+    </style>
 </head>
 <body>
     <form>
-        <label for="stu-name">student name</label>
-        <input id="dtu-nametype" type="text" placeholder="student name"required> <br>
+        <label for="stu-name">* student name</label>
+        <input id="dtu-nametype" type="text" placeholder="student name"required> <br><br>
 
-        <label for="email">student email</label>
-        <input id="email" type="email"required> <br>
+        <label for="email">* student email</label>
+        <input id="email" type="email"required> <br><br>
 
-        <label for="contact">contact</label>
-        <input id="contact" type="number"required> <br>
+        <label for="contact">* contact</label>
+        <input id="contact" type="number"required> <br><br>
 
-        <label for="dob">date of birth</label>
-        <input type="date"id="dob"> <br>
+        <label for="dob">* date of birth</label>
+        <input type="date"id="dob"> <br><br>
 
-        <label for="address">parmanant address</label>
+        <label for="address"> *parmanant address</label>
         <textarea id="address" rows="4"cols="20"></textarea><br> <br>
 
-        <label for="gender">gender</label>
-        <input type="radio"name="gender">Male
-        <input type="radio"name="gender">female <br>
+        <label for="gender">* gender</label> <br><br>
+        <input type="radio"name="gender">Male <br>
+        <input type="radio"name="gender">female <br><br>
 
         <input id="terms" type="checkbox">
-        <label for="terms">i accept terms and condition</label>
+        <label for="terms">i accept terms and condition</label> <br><br>
 
         <button>submit</button>
     </form>
