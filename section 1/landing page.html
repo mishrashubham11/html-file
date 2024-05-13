@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root{
+            --theme-color: #086308 ;
+        }
         * {
             font-family: Monoserrat;
         }
@@ -44,6 +47,7 @@
             border: 2px solid white;
             margin-top: 10px;
             transition-duration: 0.3s;
+            cursor: pointer;
 
         }
         .hero-btn:hover{
@@ -51,7 +55,36 @@
             color: green;
 
         }
+        .section{
+            border: 2px solid red;
+            padding: 50px 200px;
+        }
+        .card-group{
+            
+            display: flex;
+            gap: 30px;
+        }
+        .card{
+           text-align: center;
+            /*border: 2px solid green;*/
+            padding: 50px;
+            border-radius: 10px;
+            color: var(--theme-color);
+            transition-duration: 0.3s;
+            
+        }
+        .card:hover{
+            color: white;
+            background-color: var(--theme-color);
+            cursor: pointer;
+        }
+        .section-title{
+            text-align: center;
+            font-size: 40px;
+            color:var(--theme-color)
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -60,11 +93,39 @@
         <h1 class="header-title">Title of the Website</h1>
         <p class="header-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, op</p>
         <button class="hero-btn">get access</button>
+        
+        
                    
 
 
     </header>
     <main>
+        <section class="section feature-section">
+            <h1 class="section-title"> features section</h1>
+
+            <div class="card-group">
+                 <div class="card">
+                    <i class="fa-solid fa-rocket fa-6x"></i>
+                    <h2>fast delivery</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam repellat molestiae reiciendis delectus optio quod velit totam quo sit qui. </p>
+
+                 </div>
+                 <div class="card">
+                    <i class="fa-solid fa-rocket fa-6x"></i>
+                    <h2>fast delivery</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error hic quibusdam eius cum ut sed enim obcaecati libero sequi iste totam ipsa dolorum expedita, ea autem voluptates eligendi fuga exercitationem?
+                    </p>
+
+                 </div>
+                 <div class="card">
+                    <i class="fa-solid fa-rocket fa-6x"></i>
+                    <h2>fast delivery</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam repellat molestiae reiciendis delectus optio quod velit totam quo sit qui. </p>
+
+                 </div>
+            </div>
+
+        </section>
 
     </main>
     <footer>
