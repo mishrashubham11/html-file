@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Product Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navbar -->
+    <nav class="bg-red-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-lg font-bold">Pizza Shop</a>
+            <div>
+                <a href="#" class="text-white px-4">Home</a>
+                <a href="#" class="text-white px-4">Menu</a>
+                <a href="#" class="text-white px-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <div class="container mx-auto mt-10">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
+            <img src="https://4.imimg.com/data4/MM/MM/GLADMIN-/img-2164480fresh-20veggie-500x500.png" alt="Pizza Image" class="w-full md:w-1/2 h-64 md:h-auto object-cover">
+            <div class="p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Delicious Pepperoni Pizza</h2>
+                    <p class="text-gray-600 mt-4">Our classic pepperoni pizza is made with fresh ingredients and baked to perfection. A true delight for all pizza lovers.</p>
+                    <div class="mt-4">
+                        <span class="text-gray-600">Size:</span>
+                        <select class="ml-2 border border-gray-300 rounded px-2 py-1">
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-gray-600">Quantity:</span>
+                        <input type="number" value="1" class="ml-2 border border-gray-300 rounded px-2 py-1 w-16">
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-2xl font-bold text-gray-800">$12.99</span>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <button class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-10 p-4">
+        <div class="container mx-auto text-center text-white">
+            &copy; 2024 Pizza Shop. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
