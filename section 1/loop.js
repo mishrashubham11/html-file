@@ -16,3 +16,24 @@ for( let i=240; i<370; i++){
         console.log(i);
     }
 }
+// while loop
+let num = 10
+while (num < 20){
+    console.log(num)
+    num+=2
+}
+// dowhile loop
+
+let a=15
+
+do{
+    console.log(a)
+} while(a<10)
+
+    //  for each loop
+
+    let nums=[23,45,67,54,] 
+    // above is an array
+    for( let n of nums){
+        console.log(n);
+    }
