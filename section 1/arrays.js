@@ -31,3 +31,26 @@ console.log(price.slice(1)); // not print ₹ print all accept it
 
 const prices='₹6668.758/-'
 console.log(prices.slice(1,-2));
+
+
+
+// adding new elements
+movies.push('the dark knight')   // the push add ele at last
+movies.unshift('the god')       //the unshift add movie at the first
+console.log(movies);
+
+
+//removing element from array
+movies.pop()   //remove last ele
+movies.shift()  //remove first ele
+console.log(movies)
+
+
+
+//alrounder functions
+
+movies.splice(3,2, 'batman','superman')  // 3 indicates array and 2 indicates no. of ele  splice deleted with 3 and 4 index batman superman add at array in that position
+console.log(movies);
+// if we put o after index the it not del ele of that index and add name after that we given
+movies.splice(3,0,'flash','thor')
+console.log(movies);

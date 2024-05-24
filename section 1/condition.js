@@ -7,7 +7,7 @@ let y='good'
 const pi=3.14
 // pi=2345
 console.log(y);
-//    let is local somdeclar it in y scope
+//    let is local so declar it in y scope
 //  const ,,,,,,,,,,,,,,,,,,, pi scope
 
 } else{
