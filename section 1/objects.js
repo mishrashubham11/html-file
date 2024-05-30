@@ -90,8 +90,6 @@ const smartphoneLists=[
 
 console.log(smartphoneLists[3].price);  //print price of 4th element
 
-
-
 //filter all smartphones with price lower than 30000
  budgetphones= smartphoneLists.filter ((phone) => {return phone.price<30000})
 console.log(budgetphones);
@@ -104,3 +102,26 @@ console.log(brands);
 
 color= smartphoneLists.filter ((phone) => {return phone.colors.includes('pink')})
 console.log(color);
+
+
+
+// using map for brand 
+
+const brand = smartphoneLists.map((phone) =>{return phone.brand });
+console.log(brand);
+console.log(new Set(brand));  // remove dublicate using set (samsung)
+console.log(Array.from(new Set(brand)));  // making array 
+
+
+// make a array of smartphone which shows prices
+
+const prices= smartphoneLists.map((phone )=>{return phone.price})
+console.log(prices);
+
+// make a array of smartphones which show 10% of discount price
+const pricess=smartphoneLists.map((phone)=>{return phone.price*0.9})
+console.log(pricess);
+
+const pri= smartphoneLists.map ((phone)=>{return phone.brand +' '+phone.model}) // price model and brand together with space btw them
+console.log(pri);
+
