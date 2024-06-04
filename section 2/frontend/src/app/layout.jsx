@@ -2,6 +2,8 @@ import { Inter } from "next/font/google"; //this page is dedicated if we wand to
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import PrelineScript from "@/components/PrelineScript";
+import Footer from "@/components/footer"
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,12 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-       <Navbar />    
-       {/* this navbar in imported from componet navbar file  */}
-        
+        <Navbar />
+        {/* this navbar in imported from componet navbar file  */}
+
         {children}
-        <PrelineScript/>
-        </body>
+        <Footer />
+        <PrelineScript />
+      </body>
     </html>
   );
 }
