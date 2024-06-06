@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import PrelineScript from "@/components/PrelineScript";
 import Footer from "@/components/footer"
+import { Toaster } from "react-hot-toast";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,6 +19,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         {/* this navbar in imported from componet navbar file  */}
+        <Toaster position="top-right" />
+        {/* the toaster is a library */}
 
         {children}
         <Footer />
