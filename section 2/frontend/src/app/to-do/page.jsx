@@ -53,14 +53,10 @@ setTaskList([...temp])
             <h1 className='text-3xl font-bold text-center my-5'>Todo List</h1>
 
             <div className='border-2 shadow-lg rounded-lg p-5'>
-                <input
-                    onKeyDown={addNewTodo}
-                    type="text"
-                    className='w-full border border-blue-500 px-4 py-2 rounded-md'
-                    placeholder='Add a new todo'
-                />
+               
 
-                <div className='p-4'>
+                <div className='p-4 h-[50vh] overflow-auto'> // 
+                    {/* above tailwind is for scrolling */}
                     {
                         taskList.map((obj, index) => {
                             return <div key={index} className='grid grid-cols-2 p-4 mb-3 border-2 cursor-pointer hover:bg-gray-300'>
@@ -76,6 +72,12 @@ setTaskList([...temp])
                     }
                 </div>
 
+                <input
+                    onKeyDown={addNewTodo}
+                    type="text"
+                    className='w-full border border-blue-500 px-4 py-2 rounded-md'
+                    placeholder='Add a new todo'
+                />
             </div>
 
         </div>
