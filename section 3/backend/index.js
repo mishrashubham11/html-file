@@ -8,6 +8,9 @@ const userRouter = require('./routers/userRouter')  // import userrouter file
  const app= express()
 
  const port = 5000   // server port
+
+ //middleware
+ app.use(express.json())   // convert js into json code
  app.use('/user',userRouter)   // /user likhenge to router wala khulega add mhi likha to index wala server add chalega
 
 
