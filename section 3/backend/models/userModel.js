@@ -7,4 +7,4 @@ const mySchema= new Schema({
 
 })
 
-module.exports = moodel('user',mySchema)
+module.exports = model('user',mySchema)    // user is collection name 

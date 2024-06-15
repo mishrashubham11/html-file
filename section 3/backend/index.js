@@ -1,7 +1,7 @@
 const express = require('express'); // import express
 
 const userRouter = require('./routers/userRouter')  // import userrouter file
-
+const feedRouter = require('./routers/feedRouter')  // import feedrouter file
 
  // initialize express
 
@@ -12,7 +12,7 @@ const userRouter = require('./routers/userRouter')  // import userrouter file
  //middleware
  app.use(express.json())   // convert js into json code
  app.use('/user',userRouter)   // /user likhenge to router wala khulega add mhi likha to index wala server add chalega
-
+ app.use('/feed',feedRouter)
 
  //route or endpoint '' it decide to accept request''
  app.get('/', (req,res)=>{

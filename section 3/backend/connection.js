@@ -5,12 +5,14 @@ const url= "mongodb+srv://shubham8756:8756@cluster0.1h3p55f.mongodb.net/shubham?
 //asynchronus function
 mongoose.connect(url) // connecting db
 
-.then((result) => {                        //type thenc then this syntax arrived and it this erron handling then and catch
+.then((result) => {          //type thenc then this syntax arrived and it this erron handling then and catch
     console.log('database connected');
 })
 .catch((err) => {
     console.log(err);
 });
+
+module.exports = mongoose ;   // if we import there(usermodel me conection) the here we must export
 
 
 
