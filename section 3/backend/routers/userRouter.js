@@ -19,6 +19,59 @@ router.post('/add',(req,res)=>{
 
     
 
-router.get('/getall',(req,res)=>{res.send('response from user getall')})
+router.get('/getall',(req,res)=>{
+    Model.find()   // find dhoondh ke data lata h db se
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });             
+})
 
+//:colon denotes url parameter
+router.get("/getbycity/:city",(req, res)=>{
+       console.log(req.params.city);     //jo user : ke bad nam likha h wahi niche params. ke bad likhna pdega
+
+       Model.find({city : req.params.city})   //city model mwe honi chahiye
+      
+       .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });             
+
+})
+
+
+
+
+
+router.get('/getbyemail/:email', (req,res)=>{
+    Model.findOne({email:req.params.email})  //findone null deta h ager match nhi hoga email to
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });             
+})
+
+
+
+
+
+router.get("/getbyid/:id",(req, res)=>{
+
+    Model.findById (req.params.id)   //findbyid round braacut leta h
+   
+    .then((result) => {
+     res.status(200).json(result)
+ }).catch((err) => {
+     console.log(err);
+     res.status(500).json(err)
+ });             
+
+})
 module.exports = router

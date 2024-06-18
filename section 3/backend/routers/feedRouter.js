@@ -19,6 +19,36 @@ router.post('/add',(req,res)=>{
 
     
 
-router.get('/getall',(req,res)=>{res.send('response from user getall')})
+
+
+
+
+
+router.get('/getall',(req,res)=>{
+    Model.find()   // find dhoondh ke data lata h db se
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });             
+})
+
+
+
+
+router.get("/getbytitle/:title",(req, res)=>{
+
+    Model.findOne ({title : req.params.title})   //findbyid round braacut leta h ar ye id ka lata h Find on sirf ek ka lata h find sbka ho skta h
+   
+    .then((result) => {
+     res.status(200).json(result)
+ }).catch((err) => {
+     console.log(err);
+     res.status(500).json(err)
+ });             
+
+})
+
 
 module.exports = router
