@@ -1,5 +1,5 @@
 const express = require('express');   //req shortcut for import ex.
-const Model  = require('../models/feedModel')  //importing user model  dot dot defines file before usermodel
+const Model  = require('../models/feedModel')  //importing feed model  dot dot defines file before usermodel
 
 const router = express.Router();    // initializing express
 

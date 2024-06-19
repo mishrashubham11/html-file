@@ -3,6 +3,9 @@ const Model  = require('../models/userModel')  //importing user model  dot dot d
 
 const router = express.Router();    // initializing express
 
+
+
+//create opration
 router.post('/add',(req,res)=>{
     console.log(req.body);
 
@@ -16,7 +19,7 @@ router.post('/add',(req,res)=>{
     });
 })
 
-
+//
     
 
 router.get('/getall',(req,res)=>{
@@ -28,7 +31,7 @@ router.get('/getall',(req,res)=>{
         res.status(500).json(err)
     });             
 })
-
+//read operation
 //:colon denotes url parameter
 router.get("/getbycity/:city",(req, res)=>{
        console.log(req.params.city);     //jo user : ke bad nam likha h wahi niche params. ke bad likhna pdega
@@ -74,4 +77,39 @@ router.get("/getbyid/:id",(req, res)=>{
  });             
 
 })
+
+
+
+//put operation
+router.put('/update/:id', (req,res) => {
+    Model.findByIdAndUpdate(req.params.id,req.body,{new:true}) //for update data
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err )
+    });
+})
+
+
+
+
+
+//delete operation
+router.delete('/delete/:id', (req,res) => {
+    Model.findByIdAndDelete(req.params.id) //for delete data
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err )
+    });
+})
+
+
+
+
+
+
+
 module.exports = router
