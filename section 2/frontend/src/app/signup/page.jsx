@@ -1,6 +1,8 @@
 'use client';  // client side
+import axios from 'axios';  //niche onsubmit ke axios chalayenge apne app ye import ho jayega
 import { useFormik } from 'formik'
 import React from 'react'
+import toast from 'react-hot-toast';
 import * as Yup from 'yup';  // import yup from formik
 
 
@@ -30,11 +32,22 @@ const Signup = () => {
       password: '',    // four fields in our form
       confirmPassword: '',
     },
+
     onSubmit: (values, { resetForm }) => {
-      setTimeout(() => {
-        console.log(values);
-        resetForm();
-      }, 3000);
+      console.log(values);
+     axios.post('http://localhost:5000/user/add', values)     //conecting backend with frontend  //value bhejna h isliye value
+     .then((result) => {         //using thenc for reading reponse kuki uper rqst kia h
+      console.log(result.status);  //200,500
+      toast.success('user Resister successfully')
+      resetForm(
+
+        
+      )
+     }).catch((err) => {
+      console.log(err);
+      toast.error('user Resistration failed')
+      
+     });
     },
     validationSchema: SignupSchema  // must needed
   })

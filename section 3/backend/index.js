@@ -4,6 +4,8 @@ const userRouter = require('./routers/userRouter')  // import userrouter file
 const feedRouter = require('./routers/feedRouter')  // import feedrouter file
 const productRouter = require('./routers/productRouter')  // import productrouter file
 
+const cors= require('cors')  //importiong cors
+
  // initialize express
 
  const app= express()
@@ -11,7 +13,12 @@ const productRouter = require('./routers/productRouter')  // import productroute
  const port = 5000   // server port
 
  //middleware
+ //handling cors
+ app.use(cors({
+    origin:['http://localhost:3000']   //frontend server conect to bckend
+ }))
  app.use(express.json())   // convert js into json code
+
  app.use('/user',userRouter)   // /user likhenge to router wala khulega add mhi likha to index wala server add chalega
  app.use('/feed',feedRouter)    //feedrouter file
  app.use('/product', productRouter )  //pasting file of productrouter
