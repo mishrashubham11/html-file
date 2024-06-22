@@ -1,5 +1,6 @@
 'use client';     //for client site
 import axios from 'axios'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const ManageUser = () => {
@@ -22,6 +23,17 @@ const ManageUser = () => {
         fetchUserData();          //data dekhne ke liye inspect me
 
     }, [])
+
+    const deleteUser = (id) => {
+    axios.delete('http://localhost:5000/user/delete/'+id)        //for delete operation  by id any data in backend with delete button
+    .then((result) => {
+        if (result.status===200){
+            fetchUserData();     //ye data lata h frontend me
+        }
+    }).catch((err) => {
+        
+    });
+    }
 
     return (
         <div>
@@ -186,12 +198,23 @@ const ManageUser = () => {
                                                             </td>
                                                             <td className="size-px whitespace-nowrap">
                                                                 <div className="px-6 py-1.5">
-                                                                    <a
+                                                                    <Link
                                                                         className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline font-medium dark:text-blue-500"
-                                                                        href="#"
+                                                                        href={'/update-user/'+user._id}  // for update the data 
                                                                     >
                                                                         Edit
-                                                                    </a>
+                                                                    </Link>
+                                                                </div>
+                                                            </td>
+                                                            <td className="size-px whitespace-nowrap">
+                                                                <div className="px-6 py-1.5">
+                                                                    <button
+                                                                    onClick={()=>{deleteUser(user._id)}}    //delete button work fron its upper fuction
+                                                                        className="inline-flex items-center gap-x-1 text-sm text-red-600 decoration-2 hover:underline font-medium dark:text-red-500"
+                                                                        
+                                                                    >
+                                                                delete
+                                                                    </button>
                                                                 </div>
                                                             </td>
                                                         </tr>
