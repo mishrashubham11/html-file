@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Formik } from 'formik';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const updateUser = () => {
 
@@ -32,9 +33,23 @@ const updateUser = () => {
   }, [])
 
 
-  const submitForm = (value) => {
+  const submitForm = (values) => {
     console.log(values);
+
+    axios.put('http://localhost:5000/user/update/'+id, values)  //update in table after clicking on update in table
+    .then((result) => {
+      if (result.status===200){
+        toast.success('user update successfully')
+      }
+
+    }).catch((err) => {
+      toast.error('failed to update user')
+       console.log(err);
+      
+    });
   }
+
+
 
   return (
     <div className='max-w-2xl mx-auto py-5'>
@@ -92,7 +107,7 @@ const updateUser = () => {
          
             className='bold w-full mt-1 mb-3 py-2 px-3 rounded-md outline-none border-2' />
 
-          <button className='my-5 py-3 px-5 bg-green-500 text-black rounded-lg '>Submit</button>
+          <button type='submit' className='my-5 py-3 px-5 bg-green-500 text-black rounded-lg '>Submit</button>
 
 
         </form>
