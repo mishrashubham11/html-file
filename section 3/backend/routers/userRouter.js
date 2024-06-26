@@ -1,6 +1,7 @@
 const express = require('express');   //req shortcut for import ex.
 const Model  = require('../models/userModel')  //importing user model  dot dot defines file before usermodel
 const jwt = require('jsonwebtoken');   //imp jwt login tym pe ek id dete h taki dubara login ke bad vo pehchane ki hum hi login kiye the
+const verifyToken = require('./verifyToken');
 require('dotenv').config(); // imp ISSE KOI BHI CHEXX HUM ENV FIL ME RAKH SKTE H IS FILE KA
 
 
@@ -136,7 +137,7 @@ Model.findOne(req.body)
                         return res.status(500).json(err);
 
                     }else{
-                        return res.status(200).json({token})
+                        return res.status(200).json({token, name, email})
                     }
                 }
            )
@@ -147,5 +148,9 @@ Model.findOne(req.body)
 })
 
 
+
+router.get('/authorise', verifyToken, (req, res)=>{
+    res.status(200).json(req.user)
+})
 
 module.exports = router

@@ -4,8 +4,11 @@ import classes from './login.module.css'; // here we import css for locally css 
 import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const login = () => {
+
+  const router= useRouter();
 
   const loginForm = useFormik({
     initialValues: {
@@ -13,7 +16,7 @@ const login = () => {
       password: '',
     },
     onSubmit: (values) => {
-      console.log(values);
+      //console.log(values);
 
       axios.post('http://localhost:5000/user/authenticate', values)
         .then((result) => {
@@ -22,6 +25,12 @@ const login = () => {
 
           if (result.status === 200) {
             toast.success('Login SUCCESSFULLY')
+
+
+            localStorage.setItem('user', JSON.stringify(result.data)); //for storing token in browser local storage
+
+            document.cookie=`token=${result.data.token}`; //cookie store kerta h cookies me token jayega
+          router.push('/manage-users');
           } 
 
         }).catch((err) => {
