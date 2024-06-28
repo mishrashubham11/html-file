@@ -10,6 +10,8 @@ const login = () => {
 
   const router= useRouter();
 
+  const {setLoggedIn, setCurrentUser} = useAppContext();
+
   const loginForm = useFormik({
     initialValues: {
       email: '',
