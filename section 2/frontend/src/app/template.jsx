@@ -1,10 +1,13 @@
 import { AppProvider } from '@/context/AppContext'
 import React, { Children } from 'react'
+import Navbar from '@/components/navbar'
 
-const Template = () => {
+const Template = ({children}) => {
   return (
     <AppProvider>
-        {Children}
+        <Navbar />
+        {/* this navbar in imported from componet navbar file  */}
+        {children}
     </AppProvider>
   )
 }

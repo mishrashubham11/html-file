@@ -17,8 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {/* this navbar in imported from componet navbar file  */}
+      
         <Toaster position="top-right" />
         {/* the toaster is a library */}
 

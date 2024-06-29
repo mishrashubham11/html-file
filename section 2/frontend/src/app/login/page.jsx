@@ -5,12 +5,14 @@ import { useFormik } from 'formik';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { Result } from 'postcss';
+import useAppContext from '@/context/AppContext';
 
 const login = () => {
 
-  const router= useRouter();
+  const router = useRouter();
 
-  const {setLoggedIn, setCurrentUser} = useAppContext();
+  const { setloggedIn, setCurrentUser } = useAppContext();
 
   const loginForm = useFormik({
     initialValues: {
@@ -31,13 +33,16 @@ const login = () => {
 
             localStorage.setItem('user', JSON.stringify(result.data)); //for storing token in browser local storage
 
-            document.cookie=`token=${result.data.token}`; //cookie store kerta h cookies me token jayega
-          router.push('/manage-users');
-          } 
+            document.cookie = `token=${result.data.token}`; //cookie store kerta h cookies me token jayega
+
+            setCurrentUser(result.data);
+            setloggedIn(true);
+            router.push('/manage-users');
+          }
 
         }).catch((err) => {
           console.log(err);
-           if (err.response.status === 401) {
+          if (err.response.status === 401) {
             toast.error('Invalid Credentials')
           } else {
             toast.error('Faild to login')

@@ -1,11 +1,11 @@
 // login kare to logout ka option aye ar vo kare to vo ye sb uske liye code h
 'use client';
 import { useRouter } from "next/navigation";
-import { Children, createContext, useContext, useState } from "react";    
+import { createContext, useContext, useState } from "react";    
 
 export const AppContext = createContext();
 
-export const AppProvider = ({Children})=>{
+export const AppProvider = ({children})=>{
 
     const router = useRouter();
 
@@ -31,10 +31,10 @@ const logout = () => {
         setloggedIn,
         logout
     }}>
-        {Children}
+        {children}
     </AppContext.Provider>
 
 }
 
 const useAppContext = () => useContext(AppContext);
-export default useAppProvider;
+export default useAppContext;
